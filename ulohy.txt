@@ -1,0 +1,6 @@
+1,Načitat subor
+2,Vypísat ženy
+3,Vypísat <18
+4,nar december
+5,Panna znamenie
+6,Usporiadat podla veku
