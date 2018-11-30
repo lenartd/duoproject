@@ -39,6 +39,7 @@ int main()
 	 }
 	 fclose(file);
 	 
+	 printf("\nFemales: \n");
 	 //List Females
 	 int j;
 	 for(j=0; j<=i; j++)
@@ -51,5 +52,68 @@ int main()
 		 }
 	 }
 	 
+	 printf("\nYounger than 18: \n");
+	 //<18
+	for(j=0; j<=i; j++)
+	 {
+	 	if(students[j].dob.y == 2000 && students[j].dob.d >= 26 && students[j].dob.m >= 11)
+		 {
+		 	printf("%s %s ", students[j].fname, students[j].lname);
+        	printf("%d.%d.%d ", students[j].dob.d, students[j].dob.m, students[j].dob.y);
+        	printf("%c\n", students[j].gender);
+		 }
+	 	else if(students[j].dob.y > 2000)
+		 {
+		 	printf("%s %s ", students[j].fname, students[j].lname);
+        	printf("%d.%d.%d ", students[j].dob.d, students[j].dob.m, students[j].dob.y);
+        	printf("%c\n", students[j].gender);
+		 }
+	 }
+	 
+    printf("\nBorn in december 5: \n");
+	 //December 5
+	 for(j=0; j<=i; j++)
+	 {
+	 	if(students[j].dob.d == 5 && students[j].dob.m == 12  )
+		 {
+		 	printf("%s %s ", students[j].fname, students[j].lname);
+        	printf("%d.%d.%d ", students[j].dob.d, students[j].dob.m, students[j].dob.y);
+        	printf("%c\n", students[j].gender);
+		 }
+	 }
+	 
+	  printf("\nFrom youngest to the oldest \n");
+	 //young to old
+	 int c;
+	 for(j=0; j<=i-1; j++)
+	 {
+		for (c=0; c<i-1-j; c++)       
+		{
+			if (students[c].dob.y < students[c+1].dob.y)
+			{
+				int tmp;
+				tmp = students[c].dob.y;
+				students[c].dob.y = students[c+1].dob.y;
+                students[c+1].dob.y = tmp;
+			}  
+		}
+	 }
+	 for(j=0; j<=i-1; j++)
+	 {
+	 	printf("%s %s ", students[j].fname, students[j].lname);
+        printf("%d.%d.%d ", students[j].dob.d, students[j].dob.m, students[j].dob.y);
+      	printf("%c\n", students[j].gender);
+	 }
+	 //Panna
+    printf("\nPanna \n");
+	for (j=0; j<i; j++)
+	{
+		if ((students[j].dob.d > 24 && students[j].dob.m == 8) || (students[j].dob.d < 23 && students[j].dob.m == 9))
+		{
+			printf("%s %s ", students[j].fname, students[j].lname);
+            printf("%d.%d.%d ", students[j].dob.d, students[j].dob.m, students[j].dob.y);
+         	printf("%c\n", students[j].gender);
+		}
+    }
 }
 
